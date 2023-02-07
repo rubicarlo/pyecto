@@ -12,4 +12,3 @@ class DownloadThread(QThread):
     def run(self):
         download_command = f"ffmpeg -i {self.url} -c copy {self.output_file}"
         subprocess.run(download_command, shell=True)
-        self.progress_signal.emit("El archivo ha sido descargado con éxito.")
